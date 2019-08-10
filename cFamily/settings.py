@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'categoryApp',
     'inspectdb_refactor',
     'tinymce',
+    'inline_actions'
 ]
 
 AUTH_USER_MODEL = 'categoryApp.User'
