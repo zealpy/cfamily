@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9099a17-e5be-4653-b33c-59ca01ddc59f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/categoryApp/.models.py.swp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cFamily/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cFamily/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/categoryApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/categoryApp/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +17,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1OxQfvc3QCIH3gH44o3X7zR8omW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../testing" />
   </component>
@@ -96,6 +100,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="my second commit" />
     <option name="LAST_COMMIT_MESSAGE" value="my second commit" />
   </component>
