@@ -4,13 +4,26 @@ from django.contrib.auth.models import AbstractUser
 
 from cFamily import settings
 from tinymce.models import HTMLField
+from django.utils.translation import ugettext_lazy as _
+
+
 
 class Category(models.Model):
-    parent = models.ForeignKey('self', blank=True, null=True, related_name='children',on_delete=models.CASCADE)  # on_delete=DO_NOTHING
+
+    a='Active'
+    i='Inactive'
+
+    STATUS_CHOICES = [(a, 'Active'), (i, 'Inactive')]
+    STATUS_CHOICES = (
+        (a, _("Active")),
+        (i, _("Inactive")),
+    )
+
+    parent = models.ForeignKey('self', null=True, related_name='children',on_delete=models.CASCADE)  # on_delete=DO_NOTHING
     name = models.CharField(max_length=200)
     slug = models.SlugField()
-    status = models.CharField(max_length=10)
-    description = models.CharField(max_length=255, blank=True, null=True)
+    description = models.CharField(max_length=255, null=True)
+    status = models.CharField(max_length=10,choices=STATUS_CHOICES,default=a)
 
     class Meta:
         unique_together = ('slug', 'parent',)    #enforcing that there can not be two
