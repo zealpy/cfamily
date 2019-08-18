@@ -31,11 +31,11 @@ class DoInactiveActionsMixin(object):
 
 @admin.register(Category)
 class CategoryAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
-#class CategoryAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     def fullpath(self, obj):
+        print(repr(obj))
         return format_html("{}->{}", obj.parent, obj.name)
 
-    list_display = ('name','fullpath','description', 'status')
+    list_display = ('name', 'fullpath', 'description', 'status')
 
 """
 
@@ -55,7 +55,7 @@ class CategoryInline(DefaultActionsMixin,DoInactiveActionsMixin,InlineActionsMix
 class CategoryAdmin(admin.ModelAdmin):
     #...
     def naction(self, obj):
-        return format_html("<a href='/admin/categoryApp/category/{}/change'>Edit/Delete</a>", obj.id)
+        return format_html("<a href='/admin/CategoryApp/category/{}/change'>Edit/Delete</a>", obj.id)
 
     naction.short_description = "Action"
 
