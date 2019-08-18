@@ -1,11 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User
-from django.contrib.auth.models import AbstractUser
+#from django.contrib.auth.models import AbstractUser
 
-from cFamily import settings
+from CFamily import settings
 from tinymce.models import HTMLField
 from django.utils.translation import ugettext_lazy as _
-
+from .utils import get_unique_slug
 
 
 class Category(models.Model):
@@ -13,15 +12,14 @@ class Category(models.Model):
     a='Active'
     i='Inactive'
 
-    STATUS_CHOICES = [(a, 'Active'), (i, 'Inactive')]
     STATUS_CHOICES = (
         (a, _("Active")),
         (i, _("Inactive")),
     )
 
-    parent = models.ForeignKey('self', null=True, related_name='children',on_delete=models.CASCADE)  # on_delete=DO_NOTHING
+    parent = models.ForeignKey('self',blank=True, null=True, related_name='children',on_delete=models.CASCADE)  # on_delete=DO_NOTHING
     name = models.CharField(max_length=200)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True, blank=True)
     description = models.CharField(max_length=255, null=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default=a)
 
@@ -29,8 +27,13 @@ class Category(models.Model):
         unique_together = ('slug', 'parent',)    #enforcing that there can not be two
         verbose_name_plural = "categories"       #categories under a parent with same slug
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = get_unique_slug(self, 'name', 'slug')
+        super().save(*args, **kwargs)
+
     def __str__(self):                           # __str__ method elaborated later in
-        full_path = [self.name]                  # post.  use __unicode__ in place of                                                 # __str__ if you are using python 2
+        full_path = [self.name]                  # post.  use __unicode__ in place of       # __str__ if you are using python 2
         k = self.parent
         while k is not None:
             full_path.append(k.name)
@@ -60,6 +63,9 @@ class Post(models.Model):
             breadcrumb[i] = '/'.join(breadcrumb[-1:i-1:-1])
         return breadcrumb[-1:0:-1]
 
+"""
 
 class User(AbstractUser):
     pass
+
+"""

@@ -1,4 +1,4 @@
-"""cFamily URL Configuration
+"""CFamily URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -13,10 +13,20 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
+
 from django.urls import path, include
 
+from CFamily import settings
+from . import views
+
+admin.site.site_header = settings.ADMIN_SITE_HEADER
+admin.site.site_title = "CFamily Admin"
+admin.site.index_title = "Welcome to CFamily"
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('categoryApp.urls'))
+    #path('', views.index, name='index'),
+    #path('home', views.home, name='home'),
+    #url(r'^category/(?P<hierarchy>.+)/$', views.show_category, name='category'),
 ]

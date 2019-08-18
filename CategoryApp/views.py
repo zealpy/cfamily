@@ -1,12 +1,15 @@
 from django.shortcuts import render, get_object_or_404
-from categoryApp.models import Category, Post
+from CategoryApp.models import Category, Post
 
+"""
 
 def index(request):
     return render(request, 'home.html')
-
+    
 def home(request):
     return render(request, 'home.html')
+    
+"""
 
 def show_category(request,hierarchy= None):
     category_slug = hierarchy.split('/')

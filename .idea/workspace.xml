@@ -1,17 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9099a17-e5be-4653-b33c-59ca01ddc59f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/categoryApp/.models.py.swp" afterDir="false" />
+    <list default="true" id="c9099a17-e5be-4653-b33c-59ca01ddc59f" name="Default Changelist" comment="my second commit">
+      <change afterPath="$PROJECT_DIR$/CategoryApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CategoryApp/migrations/0002_auto_20190815_1629.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CategoryApp/migrations/0003_auto_20190815_2126.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CategoryApp/templates/sign-up-success.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CategoryApp/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CategoryApp/templates/success-pass-change.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CategoryApp/utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CourseApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CourseApp/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CourseApp/migrations/0002_auto_20190817_1153.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UserApp/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/Fever.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/Fever_DACOTcz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/Fever_Kn2Rd3Q.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/Fever_nB0GTZU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Fever.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Fever_BDPGeSn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Fever_btWpz1d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uploads/Fever_kmhzu87.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categoryApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/categoryApp/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categoryApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/categoryApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cFamily/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CFamily/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cFamily/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CFamily/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cFamily/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CFamily/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cFamily/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/CFamily/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserApp/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/migrations/0002_category_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/migrations/0003_category_description.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/migrations/0004_auto_20190808_2328.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/migrations/0005_auto_20190810_1531.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/templates/admin/change_format.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CategoryApp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CourseApp/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CourseApp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CourseApp/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CourseApp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/CourseApp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CourseApp/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -22,8 +79,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/categoryApp" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/categoryApp" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
