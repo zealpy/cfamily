@@ -72,7 +72,7 @@ class TopicVideo(models.Model):
         (a, _("Active")), (i, _("Inactive")),
     )
 
-    course = models.ForeignKey(Course, null=True, related_name='videochild', on_delete=models.CASCADE)
+    #course = models.ForeignKey(Course, null=True, related_name='videochild', on_delete=models.CASCADE)
     topic = models.ForeignKey(Topic, null=True, related_name='topchild', on_delete=models.CASCADE)
     name = models.CharField('Title', unique=True, max_length=255)
     video = models.FileField(upload_to='upload/category/course/topic/')
