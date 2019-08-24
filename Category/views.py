@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from CategoryApp.models import Category, Post
+from Category.models import Category, Post
 
 """
 

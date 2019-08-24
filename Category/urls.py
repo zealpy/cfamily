@@ -1,4 +1,4 @@
-"""CFamily URL Configuration
+"""Cfamily URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -18,12 +18,12 @@ from django.contrib import admin
 
 from django.urls import path, include
 
-from CFamily import settings
+from Cfamily import settings
 from . import views
 
 admin.site.site_header = settings.ADMIN_SITE_HEADER
-admin.site.site_title = "CFamily Admin"
-admin.site.index_title = "Welcome to CFamily"
+admin.site.site_title = "Cfamily Admin"
+admin.site.index_title = "Welcome to Cfamily"
 
 urlpatterns = [
     #path('', views.index, name='index'),

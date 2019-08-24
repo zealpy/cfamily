@@ -7,7 +7,6 @@ from inline_actions.admin import InlineActionsModelAdminMixin
 from inline_actions.actions import ViewAction, DeleteAction
 from django.utils.translation import ugettext_lazy as _
 
-
 class DoInactiveActionsMixin(object):
     def get_inline_actions(self, request, obj=None):
         actions = super(DoInactiveActionsMixin, self).get_inline_actions(request, obj)

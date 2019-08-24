@@ -1,7 +1,7 @@
 from django.db import models
-#from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser
 
-from CFamily import settings
+from Cfamily import settings
 from tinymce.models import HTMLField
 from django.utils.translation import ugettext_lazy as _
 from .utils import get_unique_slug
@@ -19,17 +19,22 @@ class Category(models.Model):
 
     parent = models.ForeignKey('self',blank=True, null=True, related_name='children',on_delete=models.CASCADE)  # on_delete=DO_NOTHING
     name = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True, blank=True)
-    description = models.CharField(max_length=255, null=True)
+    description = models.TextField(blank=True,null=True)
     status = models.CharField(max_length=10,choices=STATUS_CHOICES,default=a)
+    meta_title = models.SlugField(unique=True, blank=True)
+    meta_keyword = models.CharField(max_length=255,blank=True)
+    meta_descrition = models.TextField(blank=True)
+    image = models.ImageField(upload_to='upload/category/')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('slug', 'parent',)    #enforcing that there can not be two
+        unique_together = ('meta_title', 'parent',)    #enforcing that there can not be two
         verbose_name_plural = "categories"       #categories under a parent with same slug
 
     def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = get_unique_slug(self, 'name', 'slug')
+        if not self.meta_title:
+            self.meta_title = get_unique_slug(self, 'name', 'meta_title')
         super().save(*args, **kwargs)
 
     def __str__(self):                           # __str__ method elaborated later in
@@ -63,9 +68,6 @@ class Post(models.Model):
             breadcrumb[i] = '/'.join(breadcrumb[-1:i-1:-1])
         return breadcrumb[-1:0:-1]
 
-"""
-
 class User(AbstractUser):
     pass
 
-"""

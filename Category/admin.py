@@ -21,13 +21,13 @@ class DoInactiveActionsMixin(object):
         obj.status = Category.i
         obj.save()
         messages.info(request, _("Status Inactive."))
-    inactivate.short_description = _("Inactivate")
+    inactivate.short_description = _("Active")
 
     def activate(self, request, obj, parent_obj=None):
         obj.status = Category.a
         obj.save()
         messages.info(request, _("Status Active."))
-    activate.short_description = _("Activate")
+    activate.short_description = _("Inactivate")
 
 @admin.register(Category)
 class CategoryAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
@@ -55,7 +55,7 @@ class CategoryInline(DefaultActionsMixin,DoInactiveActionsMixin,InlineActionsMix
 class CategoryAdmin(admin.ModelAdmin):
     #...
     def naction(self, obj):
-        return format_html("<a href='/admin/CategoryApp/category/{}/change'>Edit/Delete</a>", obj.id)
+        return format_html("<a href='/admin/Category/category/{}/change'>Edit/Delete</a>", obj.id)
 
     naction.short_description = "Action"
 
