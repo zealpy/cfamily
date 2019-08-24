@@ -1,6 +1,6 @@
 from django.contrib import admin, messages
 
-from CourseApp.models import Course
+from Course.models import Course, Topic, TopicVideo, DiscountCoupon
 from django.utils.html import format_html
 
 from inline_actions.admin import InlineActionsModelAdminMixin
@@ -29,7 +29,36 @@ class DoInactiveActionsMixin(object):
         messages.info(request, _("Status Active."))
     activate.short_description = _("Inactive")
 
+
+class InLineTopic(admin.TabularInline):
+    model = Topic
+
 @admin.register(Course)
 class CourseAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
-    #pass
-    list_display = ('name', 'category', 'no_of_class', 'faculty_name')
+    inlines = [InLineTopic]
+    """
+    fieldsets = (
+        (None, {
+            'fields': (
+                'name','category','faculty_name'
+            )
+        }),
+    )
+    """
+    list_display = ('name', 'category', 'no_of_class', 'faculty_name', 'image_tag')
+
+class InLineTopicVideo(admin.TabularInline):
+    model = TopicVideo
+
+@admin.register(Topic)
+class TopicAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+    inlines = [InLineTopicVideo]
+
+@admin.register(TopicVideo)
+class TopicVideoAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+    pass
+
+@admin.register(DiscountCoupon)
+class DiscountCouponAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+    pass
+
