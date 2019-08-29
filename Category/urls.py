@@ -18,6 +18,7 @@ from django.contrib import admin
 
 from django.urls import path, include
 
+#from Category.views import category_delete_view
 from Cfamily import settings
 from . import views
 
@@ -26,6 +27,7 @@ admin.site.site_title = "Cfamily Admin"
 admin.site.index_title = "Welcome to Cfamily"
 
 urlpatterns = [
+    #path('category/<int:id>/delete/', category_delete_view, name='category_delete')
     #path('', views.index, name='index'),
     #path('home', views.home, name='home'),
     #url(r'^category/(?P<hierarchy>.+)/$', views.show_category, name='category'),

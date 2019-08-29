@@ -31,11 +31,17 @@ class DoInactiveActionsMixin(object):
 
 
 class InLineTopic(admin.TabularInline):
+    extra = 1
     model = Topic
 
+class InLineCoupon(admin.TabularInline):
+    max_num = 1
+    model = DiscountCoupon
+
 @admin.register(Course)
-class CourseAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
-    inlines = [InLineTopic]
+class CourseAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+    inlines = [InLineTopic, InLineCoupon]
+
     """
     fieldsets = (
         (None, {
@@ -51,14 +57,24 @@ class InLineTopicVideo(admin.TabularInline):
     model = TopicVideo
 
 @admin.register(Topic)
-class TopicAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+class TopicAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     inlines = [InLineTopicVideo]
 
 @admin.register(TopicVideo)
-class TopicVideoAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+class TopicVideoAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     pass
 
 @admin.register(DiscountCoupon)
-class DiscountCouponAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+class DiscountCouponAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     pass
+    """
+    fieldsets = (
+        (None, {
+            'fields': (
+                'discount', 'status', 'start_date', 'end_date'
+            )
+        }),
+    )
+    """
+
 

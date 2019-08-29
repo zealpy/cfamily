@@ -1,63 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9099a17-e5be-4653-b33c-59ca01ddc59f" name="Default Changelist" comment="my third commit to roomi">
-      <change afterPath="$PROJECT_DIR$/Category/migrations/0002_auto_20190820_0231.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Category/templates/admin/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Category/templates/admin/base_site.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Course/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Course/migrations/0002_topic_status.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Course/migrations/0003_auto_20190820_1509.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/upload/category/Fever-Post-2-300x68.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/upload/category/Fever-Post-2-300x68_3FBzdbf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/upload/category/course/Whatsapp-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/base_site.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/change_format.html" afterDir="false" />
+    <list default="true" id="c9099a17-e5be-4653-b33c-59ca01ddc59f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Category/templates/category/category_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Course/migrations/0002_auto_20190829_1400.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Course/migrations/0003_auto_20190829_1400.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Course/migrations/0004_auto_20190829_1406.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Course/migrations/0005_auto_20190829_1409.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Course/migrations/0006_auto_20190829_1410.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/category/Whatsapp-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/category/Whatsapp-icon_l9E5siS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/upload/category/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFamily/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFamily/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cfamily/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFamily/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cfamily/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CFamily/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cfamily/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/migrations/0002_auto_20190815_1629.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/migrations/0003_auto_20190815_2126.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cfamily/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/templates/admin/change_format.html" beforeDir="false" afterPath="$PROJECT_DIR$/Category/templates/admin/change_format.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/templates/sign-up-success.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sign-up-success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/templates/success-pass-change.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/success-pass-change.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CategoryApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/migrations/0002_auto_20190817_1153.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserApp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/User/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Fever.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/upload/category/Fever.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Fever_BDPGeSn.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/upload/category/Fever_MOzv84l.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Fever_btWpz1d.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/Fever_kmhzu87.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Category/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Category/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Category/migrations/0002_auto_20190820_0231.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Category/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Category/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Category/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Category/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cfamily/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cfamily/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/migrations/0002_topic_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/migrations/0003_auto_20190820_1509.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/migrations/0004_remove_topicvideo_course.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Course/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Course/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +51,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/manage.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../picslo" />
     <property name="run.code.analysis.last.selected.profile" value="aDefault" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
@@ -157,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566111964618</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="all commit to roomi">
+      <created>1566623731571</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566623731571</updated>
+    </task>
+    <task id="LOCAL-00004" summary="my third commit to roomi">
+      <created>1566623844488</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566623844488</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,6 +157,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="my second commit" />
+    <MESSAGE value="all commit to roomi" />
     <MESSAGE value="my third commit to roomi" />
     <option name="LAST_COMMIT_MESSAGE" value="my third commit to roomi" />
   </component>
