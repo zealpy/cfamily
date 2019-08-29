@@ -48,7 +48,7 @@ class Category(models.Model):
 class Post(models.Model):
     user =  models.ForeignKey(settings.AUTH_USER_MODEL,default=1,on_delete=models.CASCADE)
     title = models.CharField(max_length=120)
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.CASCADE)
+    category = models.ForeignKey('category', null=True, blank=True, on_delete=models.CASCADE)
     content = HTMLField('Content')
     draft = models.BooleanField(default=False)
     publish = models.DateField(auto_now=False,auto_now_add=False,)

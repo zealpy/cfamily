@@ -30,7 +30,7 @@ class DoInactiveActionsMixin(object):
     activate.short_description = _("Inactivate")
 
 @admin.register(Category)
-class CategoryAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
+class CategoryAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     def fullpath(self, obj):
         print(repr(obj))
         return format_html("{}->{}", obj.parent, obj.name)
@@ -41,7 +41,7 @@ class CategoryAdmin(DoInactiveActionsMixin,ViewAction,DeleteAction,InlineActions
 
 
 class CategoryInline(DefaultActionsMixin,DoInactiveActionsMixin,InlineActionsMixin,admin.TabularInline):
-    model = Category
+    model = category
     can_delete = True
     fields = ('name', 'status',)
     readonly_fields = ('name')
@@ -55,7 +55,7 @@ class CategoryInline(DefaultActionsMixin,DoInactiveActionsMixin,InlineActionsMix
 class CategoryAdmin(admin.ModelAdmin):
     #...
     def naction(self, obj):
-        return format_html("<a href='/admin/Category/category/{}/change'>Edit/Delete</a>", obj.id)
+        return format_html("<a href='/admin/category/category/{}/change'>Edit/Delete</a>", obj.id)
 
     naction.short_description = "Action"
 
@@ -67,7 +67,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display_links = ['naction']
     search_fields = ['name', 'description']
 
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(category, CategoryAdmin)
 --------------------------------------------------
 
 """

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from Category.models import Category, Post
 
 """
@@ -27,4 +27,15 @@ def show_category(request,hierarchy= None):
             return render(request, "postDetail.html", {'instance':instance,'breadcrumbs':breadcrumbs})
 
     return render(request,"categories.html",{'post_set':parent.post_set.all(),'sub_categories':parent.children.all()})
+"""
+def category_delete_view(request, id):
+    obj = get_object_or_404(Category, id=id)
+    if request.method == "Post":
+        obj.delete()
+        return redirect('../../')
+    context = {"object":obj}
+    return render(request, "category/category_delete.html", context)
+"""
+
+
 

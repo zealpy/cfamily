@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'Cfamily.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cfamily', #videodb
+        'NAME': 'cfamily_db', #videodb
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
