@@ -34,13 +34,16 @@ class InLineTopic(admin.TabularInline):
     extra = 1
     model = Topic
 
+"""
 class InLineCoupon(admin.TabularInline):
     max_num = 1
     model = DiscountCoupon
+    
+"""
 
 @admin.register(Course)
 class CourseAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
-    inlines = [InLineTopic, InLineCoupon]
+    inlines = [InLineTopic]
 
     """
     fieldsets = (

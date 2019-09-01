@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from Category.models import Category, Post
+from Category.models import Category
+#from Category.models import Post
 
 """
 
@@ -10,7 +11,7 @@ def home(request):
     return render(request, 'home.html')
     
 """
-
+"""
 def show_category(request,hierarchy= None):
     category_slug = hierarchy.split('/')
     category_queryset = list(Category.objects.all())
@@ -27,6 +28,8 @@ def show_category(request,hierarchy= None):
             return render(request, "postDetail.html", {'instance':instance,'breadcrumbs':breadcrumbs})
 
     return render(request,"categories.html",{'post_set':parent.post_set.all(),'sub_categories':parent.children.all()})
+
+"""
 """
 def category_delete_view(request, id):
     obj = get_object_or_404(Category, id=id)

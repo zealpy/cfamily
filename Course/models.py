@@ -95,6 +95,7 @@ class DiscountCoupon(models.Model):
     )
     course = models.ForeignKey(Course, null=True, related_name='discountchild', on_delete=models.CASCADE)
     discount = models.CharField(max_length=10, choices=DISCOUNT_CHOICES, blank=True)
+    coupon = models.CharField(max_length=10, blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=a)
     start_date = models.DateField(null=True)
     end_date = models.DateField(null=True)
