@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #'User.apps.UserappConfig',
+    #'User'
     'Category',
     'Course',
     'inspectdb_refactor',
@@ -46,8 +47,8 @@ INSTALLED_APPS = [
     'inline_actions'
 ]
 
-AUTH_USER_MODEL = 'Category.User'
-#AUTH_USER_MODEL = 'User.CustomUser'
+#AUTH_USER_MODEL = 'User.User'
+#AUTH_USER_MODEL = 'Category.User'
 ADMIN_SITE_HEADER = "cFamily Administration"
 
 MIDDLEWARE = [
@@ -88,7 +89,7 @@ WSGI_APPLICATION = 'Cfamily.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cfamily_db', #videodb
+        'NAME': 'db_cfamily', #videodb
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',

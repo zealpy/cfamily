@@ -33,7 +33,11 @@ class DoInactiveActionsMixin(object):
 class CategoryAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     def fullpath(self, obj):
         print(repr(obj))
-        return format_html("{}->{}", obj.parent, obj.name)
+        if obj.parent is not None:
+            return format_html("{}->{}", obj.parent, obj.name)
+        else:
+            return format_html("{}", obj.name)
+
 
     list_display = ('name', 'fullpath', 'description', 'status')
 
