@@ -1,0 +1,84 @@
+{% load static %}
+<footer>
+    <div class="container container-bg-tr">
+        <div class="row foot-main-cnt">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-2" style="">
+                        <div class="foot-had">Explore</div>
+                        <div class="foot-folw">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix visible-xs">&nbsp;</div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="foot-had">Category</div>
+                        <div class="foot-folw" style="font-size:13px; line-height:22px;">
+                            {% for category in category_list %}
+                            <a href="{{category.slug}}/">{{category.name}}</a> |
+                            {% endfor %}
+                            <!--
+                            <a href="#">Python</a> | <a href="#">Spark</a> | <a href="#">Hadoop</a> | <a href="#">C/C++ Programming</a> |
+                            <a href="#">Linux</a> | <a href="#">Cloud Computing</a> | <a href="#">Big Data</a> | <a href="#">DevOps</a> |
+                            <a href="#">Data Science</a> | <a href="#">BI and Visualization</a> | <a href="#">Software Testing</a> |
+                            <a href="#">Programming & Frameworks</a> | <a href="#">Project Management and Methodologies</a> |
+                            <a href="#">Robotic Process</a> | <a href="#">AutomationData</a> | <a href="#">Warehousing and ETL</a> |
+                            <a href="#">Mobile Development</a> | <a href="#">Databases</a> | <a href="#">Artificial Intelligence</a> |
+                            <a href="#">Frontend Development</a> | <a href="#">Cyber Security</a> | <a href="#">Blockchain</a> |
+                            <a href="#"> Operating Systems</a> | <a href="#">Architecture & Design Patterns</a> | <a href="#">Digital Marketing</a>
+                            -->
+                        </div>
+                        <div class="clearfix visible-xs">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row foot-last-cnt">
+            <div class="col-sm-8" style="padding-top:10px;">All rights reserved © 2019 cFamily Computers</div>
+            <!-- <div class="col-sm-4 text-right">Design by : <a href="#" target="blank">ZealTechno</a></div>-->
+            <div class="col-sm-4">
+                <div class="follows-icon">
+                    <ul>
+                        <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="twiter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="linkdin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Top scroll button -->
+<div class="scroll-top-btn D-none" id="top_scroll">
+    <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title=" TOP"><span class="glyphicon glyphicon-arrow-up"></span></button>
+</div>
+<script>
+    $(document).ready(function(){
+
+     $(window).scroll(function (event) {
+        event.preventDefault();
+        var top = $(this).scrollTop();
+
+        if ($(this).scrollTop() > 250) {
+            $('#top_scroll').fadeIn();
+        } else {
+            $('#top_scroll').fadeOut();
+        }
+    });
+
+    $('#top_scroll').click(function () {
+        $('html, body').animate({scrollTop: 0}, 800);
+        return false;
+    });
+
+    });
+</script>

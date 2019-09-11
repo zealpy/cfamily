@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <!--- Body Left Section Start Here --->
+        <div class="body-cntL">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="JavaScript:;">{{ category_name }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+                           {% for data in category %}
+                           <li>
+                                <div class="imgBox">
+                                    <a href="/{{data.name}}/course/"><img src="/media/{{data.image}}" alt="{{data.name}}" class="img-responsive" width="100%"></a>
+                                </div>
+                               <div class="mainInfoBox">
+<!--                                <div class="title">{{data.name}}</div>-->
+                               <div class="info">{{data.description|truncatechars:110}}</div>
+                               </div>
+                           </li>
+                           {% if for.counter == 4 %}
+                               <div class="clearfix">&nbsp;</div>
+                           {% endif %}
+                           {% endfor %}
+                       </ul>
+                    </div>
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+        </div>
+        <!---Body Left Section End Here--->
+
+        <!---Body Right Section Start Here--->
+        {% include 'home/home-right.html' %}
+        <!--- Body Right Section End Here --->
+
+    </div>
+</div>
+{% endblock %}

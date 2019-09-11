@@ -1,0 +1,308 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <!--- Body Left Section Start Here --->
+        <div class="body-cntL">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="#">Languages</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+
+                           {% for category in category_list%}
+                           {% if category.parent_id == 1 %}
+                           <li class="">
+                               <img src="media/{{category.image}}" alt="{{category.name}}" class="img-responsive" width="100%">
+                               <div>{{category.description|truncatechars:110}}</div>
+                           </li>
+                           {% endif %}
+                           {% if for.counter == 4 %}
+                            <div class="clearfix">&nbsp;</div>
+                           {% endif %}
+                           {% endfor %}
+
+                       </ul>
+                    </div>
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="#">Database</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+                           {% for category in category_list %}
+                           {% if category.parent_id == 8 %}
+                           <li class="">
+                               <img src="media/{{category.image}}" alt="{{category.name}}" class="img-responsive" width="100%">
+                               <div>{{category.description|truncatechars:105}}</div>
+                           </li>
+                           {% endif %}
+                           {% endfor %}
+                       </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="#">Bigdata</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+                           {% for category in category_list %}
+                           {% if category.parent_id == 12 %}
+                           <li class="">
+                               <img src="media/{{category.image}}" alt="{{category.name}}" class="img-responsive" width="100%">
+                               <div>{{category.description|truncatechars:110}}</div>
+                           </li>
+                           {% endif %}
+                           {% if forloop.counter == 4 %}
+                            <div class="clearfix">&nbsp;</div>
+                           {% endif %}
+                           {% endfor %}
+                       </ul>
+                    </div>
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+        </div>
+        <!---Body Left Section End Here--->
+
+        <!---Body Right Section Start Here--->
+        <div class="body-cntR">
+            <div class="row">
+                <div class="col-sm-12"><img src="{% static 'images/ads2.jpg' %}" alt="" class="img-responsive"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="category-tab">
+                        <ul>
+                            <li><a href="#">Courses Video</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+
+
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img2.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img1.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Spark Class</a></h6>
+                                <p>Tarique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img2.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img1.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Spark</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img2.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img1.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Spark</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0"><a href="#"><img src="{% static 'images/xs2-img2.jpg' %}" alt="" class="img-responsive"></a></div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12"><img src="{% static 'images/ads5.jpg' %}" alt="" class="img-responsive"></div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="category-tab">
+                        <ul>
+                            <li><a href="#">Categories</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0">
+                            <a href="#" class="movie-img">
+                                <img src="{% static 'images/xs2-img1.jpg' %}" alt="" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Spark</a></h6>
+                                <p>Tarique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0">
+                            <a href="#" class="movie-img">
+                                <img src="{% static 'images/xs2-img2.jpg' %}" alt="" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0">
+                            <a href="#" class="movie-img">
+                                <img src="{% static 'images/xs2-img1.jpg' %}" alt="" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Spark</a></h6>
+                                <p>Tarique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0">
+                            <a href="#" class="movie-img">
+                                <img src="{% static 'images/xs2-img2.jpg' %}" alt="" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0">
+                            <a href="#" class="movie-img">
+                                <img src="{% static 'images/xs2-img1.jpg' %}" alt="" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Spark</a></h6>
+                                <p>Tarique</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                    <div class="row">
+                        <div class="col-sm-2 col-xs-3 col-md-4 col-lg-3 padd-right0">
+                            <a href="#" class="movie-img">
+                                <img src="{% static 'images/xs2-img2.jpg' %}" alt="" width="100%">
+                            </a>
+                        </div>
+                        <div class="col-sm-10 col-xs-9 col-md-8 col-lg-9">
+                            <div class="video-list">
+                                <h6><a href="#">Apache Hadoop</a></h6>
+                                <p>Srinivas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+
+                </div>
+            </div>
+
+        </div>
+        <!--- Body Right Section End Here --->
+
+    </div>
+</div>
+{% endblock %}

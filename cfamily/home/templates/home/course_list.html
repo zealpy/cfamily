@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <!--- Body Left Section Start Here --->
+        <div class="body-cntL">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="JavaScript:;">{{ category_name }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       {% if course_list.count > 0 %}
+                       <ul>
+                           {% for course in course_list %}
+                           <li>
+                                <div class="imgBox">
+                                    <img src="/media/{{course.image}}" alt="{{course.name}}" class="img-responsive" width="100%">
+                                    <div class="courseTitle">{{course.name}}</div>
+                                </div>
+                               <div class="mainInfoBox">
+                                   <div class="detailInfo"><strong>Faculty<span>:</span></strong>{{course.faculty_name}}</div>
+                                   <div class="detailInfo"><strong>Price<span>:</span></strong>{{course.course_type}}</div>
+                                   <div class="detailInfo"><strong>Videos<span>:</span></strong>{{course.no_of_class}} videos</div>
+                                   <div class="btnBox">
+                                    <a href="/video/" class="btn btn-primary btn-sm">View Details</a>
+                                   </div>
+                               </div>
+                           </li>
+                           {% if for.counter == 4 %}
+                               <div class="clearfix">&nbsp;</div>
+                           {% endif %}
+                           {% endfor %}
+                       </ul>
+                       {% else %}
+                            <div style="text-align:center;">No course available!</div>
+                       {% endif %}
+                    </div>
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+        </div>
+        <!---Body Left Section End Here--->
+
+        <!---Body Right Section Start Here--->
+        {% include 'home/home-right.html' %}
+        <!--- Body Right Section End Here --->
+
+    </div>
+</div>
+{% endblock %}

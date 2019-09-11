@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <!--- Body Left Section Start Here --->
+        <div class="body-cntL">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="topic/languages/">Language <span>(view all)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+                           {% for language in language_category %}
+                           <li>
+                                <div class="imgBox">
+                                    <a href="{{language.name}}/course/"><img src="media/{{language.image}}" alt="{{language.name}}" class="img-responsive" alt="{{language.name}}" width="100%"></a>
+                                </div>
+                               <div class="mainInfoBox">
+<!--                                <div class="title">{{language.name}}</div>-->
+                               <div class="info">{{language.description|truncatechars:110}}</div>
+                               </div>
+                           </li>
+                           {% if for.counter == 4 %}
+                            <div class="clearfix">&nbsp;</div>
+                           {% endif %}
+                           {% endfor %}
+
+                       </ul>
+                    </div>
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="topic/database/">Database <span>(view all)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+                           {% for database in database_category %}
+                           <li>
+                               <div class="imgBox">
+                                   <a href="{{database.name}}/course/"><img src="media/{{database.image}}" alt="{{database.name}}" class="img-responsive" width="100%"></a>
+                               </div>
+                               <div class="mainInfoBox">
+<!--                                <div class="title">{{database.name}}</div>-->
+                               <div class="info">{{database.description|truncatechars:110}}</div>
+                               </div>
+                           </li>
+                           {% endfor %}
+                       </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="musicVid-tab">
+                        <ul>
+                            <li><a href="topic/bigdata/">Bigdata <span>(view all)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix">&nbsp;</div>
+                </div>
+
+                <div class="col-sm-12">
+                    <div class="topVid-main-Cnt">
+                       <ul>
+                           {% for bigdata in bigdata_category %}
+                           <li>
+                                <div class="imgBox">
+                                    <a href="{{bigdata.name}}/course/"><img src="media/{{bigdata.image}}" alt="{{bigdata.name}}" class="img-responsive" width="100%"></a>
+                                </div>
+                               <div class="mainInfoBox">
+<!--                                <div class="title">{{bigdata.name}}</div>-->
+                               <div class="info">{{bigdata.description|truncatechars:110}}</div>
+                               </div>
+                           </li>
+                           {% if forloop.counter == 4 %}
+                            <div class="clearfix">&nbsp;</div>
+                           {% endif %}
+                           {% endfor %}
+                       </ul>
+                    </div>
+                </div>
+                <div class="clearfix">&nbsp;</div>
+
+            </div>
+
+        </div>
+        <!---Body Left Section End Here--->
+
+        <!---Body Right Section Start Here--->
+        {% include 'home/home-right.html' %}
+        <!--- Body Right Section End Here --->
+
+    </div>
+</div>
+{% endblock %}
