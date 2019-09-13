@@ -1,5 +1,6 @@
 from django.contrib import admin, messages
 from django.utils.html import format_html
+from django.utils.text import capfirst
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Category
@@ -32,19 +33,25 @@ class DoInactiveActionsMixin(object):
 @admin.register(Category)
 class CategoryAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     def fullpath(self, obj):
+        print(repr(obj))
         if obj.parent is not None:
             return format_html("{}->{}", obj.parent, obj.name)
         else:
             return format_html("{}", obj.name)
 
-    list_display = ('name', 'fullpath', 'short_description', 'status')
+    def category_name(self, obj):
+        return capfirst(obj.name)
+
+    list_display = ('category_name', 'fullpath', 'short_description', 'status')
     search_fields = ('name', 'description')
     list_filter = ('status', 'created')
-    ordering = ( 'created',)
+    ordering = ('created',)
+    exclude = ('slug',)
     list_per_page = 15
 
-
 """
+
+
 class CategoryInline(DefaultActionsMixin,DoInactiveActionsMixin,InlineActionsMixin,admin.TabularInline):
     model = category
     can_delete = True

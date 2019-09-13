@@ -2,13 +2,11 @@ from django.shortcuts import render
 from django.views.generic import View
 from django.http import HttpResponse
 
-from django.views.generic import DetailView
-#from categoryApp.models import Category
 from django.views.generic import (DetailView, ListView)
 from cfamily.settings import MAIN_CATEGORY
 
 from category.models import Category
-from Course.models import Course
+from course.models import Course
 
 
 # Create your views here.
@@ -17,7 +15,7 @@ class HomeView(ListView):
     # context_object_name = 'category_list'
 
     def get_queryset(self):
-        return Category.objects.filter(status='Active').values('name', 'description', 'image', 'parent_id').order_by('name')
+        return Category.objects.filter(status='Active').values('name', 'description', 'image', 'parent_id', 'slug').order_by('name')
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
@@ -25,15 +23,15 @@ class HomeView(ListView):
 
         # Language Category for home page
         context['language_category'] = Category.objects.filter(
-            status='Active', parent_id='1').values('name', 'description', 'image', 'parent_id').order_by('name')[:6]
+            status='Active', parent_id='1').values('name', 'description', 'image', 'parent_id', 'slug').order_by('name')[:6]
 
         # Database Category for home page
         context['database_category'] = Category.objects.filter(
-            status='Active', parent_id='8').values('name', 'description', 'image', 'parent_id').order_by('name')[:3]
+            status='Active', parent_id='8').values('name', 'description', 'image', 'parent_id', 'slug').order_by('name')[:3]
 
         # Bigdata for home page
         context['bigdata_category'] = Category.objects.filter(
-            status='Active', parent_id='12').values('name', 'description', 'image', 'parent_id').order_by('name')[:3]
+            status='Active', parent_id='12').values('name', 'description', 'image', 'parent_id', 'slug').order_by('name')[:3]
 
         # print('context', context)
         return context
@@ -55,11 +53,11 @@ class CategoryView(View):
 
 class CourseView(ListView):
 
-    def get(self, request, cat_name, *args, **kwargs):
+    def get(self, request, slug, *args, **kwargs):
         context = {'course_list':''}
-        context['category_name'] = cat_name.capitalize()
+        context['category_name'] = slug.capitalize()
         try:
-            obj = Category.objects.get(name__icontains=cat_name)
+            obj = Category.objects.get(slug=slug)
             # print('id val:',obj.id)
             context['course_list'] = Course.objects.filter(category_id=obj.id).values('name', 'faculty_name', 'no_of_class',
                                                                                    'course_detail', 'course_type', 'image')

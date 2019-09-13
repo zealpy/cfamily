@@ -18,16 +18,16 @@
                             <li>
                                 <a href="Javascript:;" class=" ficon" onclick="Toggle1();"><i class="fa fa-search"></i></a>
                                 <a href="Javascript:;" class="active D-none sicon" onclick="Toggle2();"><i class="fa fa-times"></i></a>
-                                <ul class="srch">
-                                    <li>
-                                        <form>
-                                            <div class="form-group has-feedback">
-                                                <input type="text" id="search" name="search" class="form-control" placeholder="Search...">
-                                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                                          </div>
-                                        </form>
-                                    </li>
-                                </ul>
+<!--                                <ul class="srch">-->
+<!--                                    <li>-->
+<!--                                        <form>-->
+<!--                                            <div class="form-group has-feedback">-->
+<!--                                                <input type="text" id="search" name="search" class="form-control" placeholder="Search...">-->
+<!--                                                <span class="glyphicon glyphicon-search form-control-feedback"></span>-->
+<!--                                          </div>-->
+<!--                                        </form>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
                             </li>
                         </ul>
                     </div>
@@ -43,14 +43,18 @@
                 <div class="menus navT">
                     <ul>
                         <li><a href="{% url 'home_page' %}" class="active"><i class=" fa fa-home"></i>&nbsp;Home</a></li>
-                        <li><a href="#"><i class=" fa fa-play-circle-o"></i>&nbsp;Course</a></li>
-                        <li><a href="#"><i class=" fa fa-check-circle"></i>&nbsp;Career Guide</a></li>
+                        <li><a href="#"><i class=" fa fa-play-circle-o"></i>&nbsp;Course</a>
+                            <ul>
+                                <li><a href="/topic/languages/">Python Course</a></li>
+                                <li><a href="/topic/database/">Database Course</a></li>
+                                <li><a href="/topic/bigdata/">Bigdata</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#"><i class=" fa fa-navicon"></i>&nbsp;Category</a>
                             <ul>
-                                <li><a href="#">Hadoop</a></li>
-                                <li><a href="#">AI/ML</a></li>
-                                <li><a href="#">Python</a></li>
-                                <li><a href="#">Linux</a></li>
+                                <li><a href="/topic/languages/">Language</a></li>
+                                <li><a href="/topic/database/">Database</a></li>
+                                <li><a href="/topic/bigdata/">Bigdata</a></li>
                             </ul>
                         </li>
                         <li><a href="#" data-toggle="modal" data-target="#sign_up">Sign Up</a></li>
@@ -63,7 +67,7 @@
                         <li><a href="#" data-toggle="modal" data-target="#vid-submit"><strong>Submit video</strong></a></li>
                     </ul>
                 </div>
-                -->
+
                 <div class="search pull-right hidden-xs">
                     <ul>
                         <li>
@@ -82,7 +86,7 @@
                         </li>
                     </ul>
                 </div>
-
+                -->
             </div>
         </div>
     </div>

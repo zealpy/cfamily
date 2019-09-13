@@ -18,11 +18,9 @@ from django.contrib import admin
 
 from django.urls import path, include
 
-#from Category.views import category_delete_view
-from cfamily import settings
+#from category.views import category_delete_view
+from django.conf import settings
 from . import views
-
-admin.site.site_header = settings.ADMIN_SITE_HEADER
 
 urlpatterns = [
     #path('category/<int:id>/delete/', category_delete_view, name='category_delete')

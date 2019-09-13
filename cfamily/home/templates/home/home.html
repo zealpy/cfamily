@@ -24,7 +24,7 @@
                            {% for language in language_category %}
                            <li>
                                 <div class="imgBox">
-                                    <a href="{{language.name}}/course/"><img src="media/{{language.image}}" alt="{{language.name}}" class="img-responsive" alt="{{language.name}}" width="100%"></a>
+                                    <a href="{{language.slug}}/course/"><img src="media/{{language.image}}" alt="{{language.name}}" class="img-responsive" alt="{{language.name}}" width="100%"></a>
                                 </div>
                                <div class="mainInfoBox">
 <!--                                <div class="title">{{language.name}}</div>-->
@@ -60,7 +60,7 @@
                            {% for database in database_category %}
                            <li>
                                <div class="imgBox">
-                                   <a href="{{database.name}}/course/"><img src="media/{{database.image}}" alt="{{database.name}}" class="img-responsive" width="100%"></a>
+                                   <a href="{{database.slug}}/course/"><img src="media/{{database.image}}" alt="{{database.name}}" class="img-responsive" width="100%"></a>
                                </div>
                                <div class="mainInfoBox">
 <!--                                <div class="title">{{database.name}}</div>-->
@@ -93,7 +93,7 @@
                            {% for bigdata in bigdata_category %}
                            <li>
                                 <div class="imgBox">
-                                    <a href="{{bigdata.name}}/course/"><img src="media/{{bigdata.image}}" alt="{{bigdata.name}}" class="img-responsive" width="100%"></a>
+                                    <a href="{{bigdata.slug}}/course/"><img src="media/{{bigdata.image}}" alt="{{bigdata.name}}" class="img-responsive" width="100%"></a>
                                 </div>
                                <div class="mainInfoBox">
 <!--                                <div class="title">{{bigdata.name}}</div>-->

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'home',
-    'Course',
+    'course',
     'category',
     'tinymce',
     'inline_actions'
@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'cfamily.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cfamily_new',
+        'NAME': 'cfamily.db',
         'USER': 'postgres',
         'PASSWORD': 'postgres',
         'HOST': 'localhost',
@@ -139,5 +139,7 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # 'data' is my media folder
+
+# BASE_URL = 'http://127.0.0.1:8000/'
 
 MAIN_CATEGORY = {'languages':1, 'database':8, 'bigdata':12}

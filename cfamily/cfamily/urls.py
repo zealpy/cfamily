@@ -30,7 +30,7 @@ urlpatterns = [
     path('video/', VideoView.as_view(), name="vdieo_page"),
 
     path('topic/<cat_name>/', CategoryView.as_view(), name='category_page'),
-    path('<cat_name>/course/', CourseView.as_view(), name='course_page'),
+    path('<slug>/course/', CourseView.as_view(), name='course_page'),
     # path('')
 
 ]
