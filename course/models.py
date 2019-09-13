@@ -1,6 +1,8 @@
 import os
+import uuid
 
 from django.db import models
+from django.utils.deconstruct import deconstructible
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
@@ -25,7 +27,18 @@ class Course(models.Model):
     no_of_class = models.IntegerField('Number of Classes', blank=True, null=True)
     course_detail = models.TextField('Detail')
     course_type = models.CharField(max_length=10, choices=COURSE_CHOICES, default=f)
-    image = models.ImageField(upload_to='upload/category/course/')
+
+    @deconstructible
+    class PathAndRename(object):
+        def __init__(self, sub_path):
+            self.path = sub_path
+
+        def __call__(self, instance, filename):
+            ext = filename.split('.')[-1]  # eg: 'jpg'
+            new_name = '{}.{}'.format(uuid.uuid4().hex, ext)
+            return os.path.join(self.path, new_name)
+
+    image = models.ImageField(upload_to=PathAndRename('upload/category/course/'))
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=a)
     meta_title = models.CharField(max_length=100, blank=True)
     meta_keyword = models.CharField(max_length=255, blank=True)
