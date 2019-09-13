@@ -59,7 +59,8 @@ class CourseAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin
     )
     """
     exclude = ('slug',)
-    list_display = ('course_name', 'category', 'no_of_class', 'faculty_name')
+    list_display = ('course_name', 'category', 'no_of_class', 'faculty_name', 'image_tag')
+    list_filter = ('name','category','faculty_name')
 
 class InLineTopicVideo(admin.TabularInline):
     model = TopicVideo
