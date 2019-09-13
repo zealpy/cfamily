@@ -4,8 +4,8 @@ from django.db import models
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 
-from Category.models import Category
-from Category.utils import get_unique_slug
+from category.models import Category
+from category.utils import get_unique_slug
 from Cfamily.settings import MEDIA_ROOT
 
 
@@ -20,17 +20,21 @@ class Course(models.Model):
 
     category = models.ForeignKey(Category, null=True, related_name='child', on_delete=models.CASCADE)
     name = models.CharField('Title', unique=True, max_length=255)
+    slug = models.SlugField(unique=True, blank=True)
     faculty_name = models.CharField(max_length=50)
     no_of_class = models.IntegerField('Number of Classes', blank=True, null=True)
     course_detail = models.TextField('Detail')
     course_type = models.CharField(max_length=10, choices=COURSE_CHOICES, default=f)
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=a)
-    meta_title = models.SlugField(unique=True, blank=True)
-    meta_keyword = models.CharField(max_length=255, blank=True)
-    meta_descrition = models.TextField(blank=True)
     image = models.ImageField(upload_to='upload/category/course/')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default=a)
+    meta_title = models.CharField(max_length=100, blank=True)
+    meta_keyword = models.CharField(max_length=255, blank=True)
+    meta_description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        db_table = 'course'
 
     def __str__(self):
         return self.name
@@ -48,8 +52,8 @@ class Course(models.Model):
         return self.topics_set.all().order_by('created')
 
     def save(self, *args, **kwargs):
-        if not self.meta_title:
-            self.meta_title = get_unique_slug(self, 'name', 'meta_title')
+        if not self.slug:
+            self.slug = get_unique_slug(self, 'name', 'slug')
         super().save(*args, **kwargs)
 
 class Topic(models.Model):
@@ -72,7 +76,7 @@ class TopicVideo(models.Model):
         (a, _("Active")), (i, _("Inactive")),
     )
 
-    #course = models.ForeignKey(Course, null=True, related_name='videochild', on_delete=models.CASCADE)
+    #course = models.ForeignKey(course, null=True, related_name='videochild', on_delete=models.CASCADE)
     topic = models.ForeignKey(Topic, null=True, related_name='topchild', on_delete=models.CASCADE)
     name = models.CharField('Title', unique=True, max_length=255)
     video = models.FileField(upload_to='upload/category/course/topic/')

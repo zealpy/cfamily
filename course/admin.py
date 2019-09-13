@@ -1,6 +1,7 @@
 from django.contrib import admin, messages
+from django.utils.text import capfirst
 
-from Course.models import Course, Topic, TopicVideo, DiscountCoupon
+from course.models import Course, Topic, TopicVideo, DiscountCoupon
 from django.utils.html import format_html
 
 from inline_actions.admin import InlineActionsModelAdminMixin
@@ -29,12 +30,12 @@ class DoInactiveActionsMixin(object):
         messages.info(request, _("Status Active."))
     activate.short_description = _("Inactive")
 
-
+"""
 class InLineTopic(admin.TabularInline):
     extra = 1
     model = Topic
 
-"""
+
 class InLineCoupon(admin.TabularInline):
     max_num = 1
     model = DiscountCoupon
@@ -43,7 +44,10 @@ class InLineCoupon(admin.TabularInline):
 
 @admin.register(Course)
 class CourseAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
-    inlines = [InLineTopic]
+    #inlines = [InLineTopic]
+
+    def course_name(self, obj):
+        return capfirst(obj.name)
 
     """
     fieldsets = (
@@ -54,7 +58,8 @@ class CourseAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin
         }),
     )
     """
-    list_display = ('name', 'category', 'no_of_class', 'faculty_name', 'image_tag')
+    exclude = ('slug',)
+    list_display = ('course_name', 'category', 'no_of_class', 'faculty_name')
 
 class InLineTopicVideo(admin.TabularInline):
     model = TopicVideo
@@ -62,6 +67,11 @@ class InLineTopicVideo(admin.TabularInline):
 @admin.register(Topic)
 class TopicAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):
     inlines = [InLineTopicVideo]
+
+    def topic_name(self, obj):
+        return capfirst(obj.name)
+
+    list_display = ('topic_name', 'course', 'status')
 
 @admin.register(TopicVideo)
 class TopicVideoAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMixin,admin.ModelAdmin):

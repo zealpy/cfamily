@@ -18,7 +18,7 @@ from django.contrib import admin
 
 from django.urls import path, include
 
-#from Category.views import category_delete_view
+#from category.views import category_delete_view
 from Cfamily import settings
 from . import views
 

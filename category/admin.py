@@ -1,5 +1,6 @@
 from django.contrib import admin, messages
 from django.utils.html import format_html
+from django.utils.text import capfirst
 from django.utils.translation import ugettext_lazy as _
 
 from .models import Category
@@ -38,8 +39,12 @@ class CategoryAdmin(DoInactiveActionsMixin,ViewAction,InlineActionsModelAdminMix
         else:
             return format_html("{}", obj.name)
 
+    def category_name(self, obj):
+        return capfirst(obj.name)
 
-    list_display = ('name', 'fullpath', 'description', 'status')
+    exclude = ('slug',)
+
+    list_display = ('category_name', 'fullpath', 'short_description', 'status')
 
 """
 

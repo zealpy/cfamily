@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from Category.models import Category
-#from Category.models import Post
+from category.models import Category
+#from category.models import Post
 
 """
 
@@ -14,12 +14,12 @@ def home(request):
 """
 def show_category(request,hierarchy= None):
     category_slug = hierarchy.split('/')
-    category_queryset = list(Category.objects.all())
+    category_queryset = list(category.objects.all())
     all_slugs = [ x.slug for x in category_queryset ]
     parent = None
     for slug in category_slug:
         if slug in all_slugs:
-            parent = get_object_or_404(Category,slug=slug,parent=parent)
+            parent = get_object_or_404(category,slug=slug,parent=parent)
         else:
             instance = get_object_or_404(Post, slug=slug)
             breadcrumbs_link = instance.get_cat_list()
@@ -32,7 +32,7 @@ def show_category(request,hierarchy= None):
 """
 """
 def category_delete_view(request, id):
-    obj = get_object_or_404(Category, id=id)
+    obj = get_object_or_404(category, id=id)
     if request.method == "Post":
         obj.delete()
         return redirect('../../')

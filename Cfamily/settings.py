@@ -38,17 +38,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'User.apps.UserappConfig',
-    #'User'
-    'Category',
-    'Course',
+    #'user.apps.UserappConfig',
+    #'user'
+    'category',
+    'course',
     'inspectdb_refactor',
     'tinymce',
     'inline_actions'
 ]
 
-#AUTH_USER_MODEL = 'User.User'
-#AUTH_USER_MODEL = 'Category.User'
+#AUTH_USER_MODEL = 'user.user'
+#AUTH_USER_MODEL = 'category.user'
 ADMIN_SITE_HEADER = "cFamily Administration"
 
 MIDDLEWARE = [

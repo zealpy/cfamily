@@ -9,12 +9,12 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('Category', '0001_initial'),
+        ('category', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name='course',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=255, unique=True, verbose_name='Title')),
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('image', models.ImageField(upload_to='upload/category/course/')),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now_add=True)),
-                ('category', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='child', to='Category.Category')),
+                ('category', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='child', to='category.category')),
             ],
         ),
         migrations.CreateModel(
@@ -40,7 +40,7 @@ class Migration(migrations.Migration):
                 ('status', models.CharField(choices=[('Active', 'Active'), ('Inactive', 'Inactive')], default='Active', max_length=10)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now_add=True)),
-                ('course', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='topicchild', to='Course.Course')),
+                ('course', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='topicchild', to='course.course')),
             ],
         ),
         migrations.CreateModel(
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 ('status', models.CharField(choices=[('Active', 'Active'), ('Inactive', 'Inactive')], default='Active', max_length=10)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now_add=True)),
-                ('topic', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='topchild', to='Course.Topic')),
+                ('topic', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='topchild', to='course.Topic')),
             ],
         ),
         migrations.CreateModel(
@@ -67,7 +67,7 @@ class Migration(migrations.Migration):
                 ('end_date', models.DateField(null=True)),
                 ('created', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now_add=True)),
-                ('course', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='discountchild', to='Course.Course')),
+                ('course', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='discountchild', to='course.course')),
             ],
         ),
     ]
